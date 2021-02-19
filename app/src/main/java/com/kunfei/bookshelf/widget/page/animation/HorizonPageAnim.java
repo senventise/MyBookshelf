@@ -22,7 +22,9 @@ public abstract class HorizonPageAnim extends PageAnimation {
         super(w, h, view, listener);
         //创建图片
         for (int i = 0; i < 3; i++) {
-            bitmapList.add(Bitmap.createBitmap(mViewWidth, mViewHeight, Bitmap.Config.ARGB_8888));
+            // ref: https://stackoverflow.com/questions/24377840/out-of-memory-error-when-calling-createbitmap
+            // 避免打开书籍时 OOM
+            bitmapList.add(Bitmap.createBitmap(mViewWidth, mViewHeight, Bitmap.Config.RGB_565));
         }
     }
 

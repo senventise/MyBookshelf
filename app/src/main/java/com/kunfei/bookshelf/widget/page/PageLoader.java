@@ -208,7 +208,9 @@ public abstract class PageLoader {
                 : mDisplayHeight - mMarginTop - mMarginBottom - mPageView.getStatusBarHeight();
 
         // 设置翻页模式
-        mPageView.setPageMode(mPageMode, mMarginTop, mMarginBottom);
+        // 默认无动画
+        PageAnimation.Mode noAnim = PageAnimation.Mode.NONE;
+        mPageView.setPageMode(noAnim, mMarginTop, mMarginBottom);
         skipToChapter(mCurChapterPos, mCurPagePos);
     }
 

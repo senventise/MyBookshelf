@@ -6,7 +6,7 @@
 
     <color name="night_mask">#00000000</color>
 
-    <color name="background">@color/md_grey_100</color>
+    <color name="background">@color/md_white_1000</color>
     <color name="background_card">#dedede</color>
     <color name="background_menu">#fcfcfc</color>
     <color name="transparent">#00000000</color>

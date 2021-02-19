@@ -125,8 +125,8 @@ public class MApplication extends Application {
         } else {
             ThemeStore.editTheme(this)
                     .primaryColor(configPreferences.getInt("colorPrimary", getResources().getColor(R.color.md_grey_100)))
-                    .accentColor(configPreferences.getInt("colorAccent", getResources().getColor(R.color.md_pink_600)))
-                    .backgroundColor(configPreferences.getInt("colorBackground", getResources().getColor(R.color.md_grey_100)))
+                    .accentColor(configPreferences.getInt("colorAccent", getResources().getColor(R.color.md_black_1000)))
+                    .backgroundColor(configPreferences.getInt("colorBackground", getResources().getColor(R.color.md_white_1000)))
                     .apply();
         }
     }
