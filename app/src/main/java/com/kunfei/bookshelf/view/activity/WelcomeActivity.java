@@ -36,7 +36,7 @@ public class WelcomeActivity extends MBaseActivity<IPresenter> {
         binding.tvGzh.setTextColor(ThemeStore.accentColor(this));
         binding.ivBg.setColorFilter(ThemeStore.accentColor(this));
         ValueAnimator welAnimator = ValueAnimator.ofFloat(1f, 0f).setDuration(800);
-        welAnimator.setStartDelay(500);
+        welAnimator.setStartDelay(100);
         welAnimator.addUpdateListener(animation -> {
             float alpha = (Float) animation.getAnimatedValue();
             binding.ivBg.setAlpha(alpha);
@@ -71,7 +71,10 @@ public class WelcomeActivity extends MBaseActivity<IPresenter> {
     }
 
     private void startBookshelfActivity() {
-        startActivityByAnim(new Intent(this, MainActivity.class), android.R.anim.fade_in, android.R.anim.fade_out);
+        //startActivityByAnim(new Intent(this, MainActivity.class), android.R.anim.fade_in, android.R.anim.fade_out);
+        // 禁用启动动画
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
     private void startReadActivity() {

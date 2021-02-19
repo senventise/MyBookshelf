@@ -131,45 +131,7 @@ public abstract class MBaseActivity<T extends IPresenter> extends BaseActivity<T
      * 沉浸状态栏
      */
     protected void initImmersionBar() {
-        try {
-            View actionBar = findViewById(R.id.action_bar);
-            if (isImmersionBarEnabled()) {
-                if (getSupportActionBar() != null && actionBar != null && actionBar.getVisibility() == View.VISIBLE) {
-                    mImmersionBar.statusBarColorInt(ThemeStore.primaryColor(this));
-                } else {
-                    mImmersionBar.transparentStatusBar();
-                }
-            } else {
-                if (getSupportActionBar() != null && actionBar != null && actionBar.getVisibility() == View.VISIBLE) {
-                    mImmersionBar.statusBarColorInt(ThemeStore.statusBarColor(this));
-                } else {
-                    mImmersionBar.statusBarColor(R.color.status_bar_bag);
-                }
-            }
-        } catch (Exception ignored) {
-        }
-        try {
-            if (isImmersionBarEnabled() && ColorUtil.isColorLight(ThemeStore.primaryColor(this))) {
-                mImmersionBar.statusBarDarkFont(true, 0.2f);
-            } else if (ColorUtil.isColorLight(ThemeStore.primaryColorDark(this))) {
-                mImmersionBar.statusBarDarkFont(true, 0.2f);
-            } else {
-                mImmersionBar.statusBarDarkFont(false);
-            }
-            if (!preferences.getBoolean("navigationBarColorChange", false)) {
-                mImmersionBar.navigationBarColor(R.color.black);
-                mImmersionBar.navigationBarDarkFont(false);
-            } else if (ImmersionBar.canNavigationBarDarkFont()) {
-                mImmersionBar.navigationBarColorInt(ThemeStore.primaryColorDark(this));
-                if (ColorUtil.isColorLight(ThemeStore.primaryColor(this))) {
-                    mImmersionBar.navigationBarDarkFont(true);
-                } else {
-                    mImmersionBar.navigationBarDarkFont(false);
-                }
-            }
-            mImmersionBar.init();
-        } catch (Exception ignored) {
-        }
+        //因为 jdread1 没有状态栏，所以不需要沉浸，否则会出现奇怪效果
     }
 
     /**

@@ -166,7 +166,7 @@ public class MApplication extends Application {
     }
 
     public void upEInkMode() {
-        MApplication.isEInkMode = configPreferences.getBoolean("E-InkMode", false);
+        MApplication.isEInkMode = true; // 强制 e-ink 模式
     }
 
     /**
