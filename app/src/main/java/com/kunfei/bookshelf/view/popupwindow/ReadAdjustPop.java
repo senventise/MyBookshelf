@@ -1,17 +1,18 @@
 //Copyright (c) 2017. 章钦豪. All rights reserved.
 package com.kunfei.bookshelf.view.popupwindow;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.WindowManager;
 import android.widget.FrameLayout;
 import android.widget.SeekBar;
 
 import com.kunfei.bookshelf.databinding.PopReadAdjustBinding;
 import com.kunfei.bookshelf.help.ReadBookControl;
 
+@SuppressLint("SetTextI18n")
 public class ReadAdjustPop extends FrameLayout {
 
     private PopReadAdjustBinding binding = PopReadAdjustBinding.inflate(LayoutInflater.from(getContext()), this, true);
@@ -62,28 +63,12 @@ public class ReadAdjustPop extends FrameLayout {
 
     private void bindEvent() {
         //亮度调节
-        binding.llFollowSys.setOnClickListener(v -> {
-            binding.scbFollowSys.setChecked(!binding.scbFollowSys.isChecked(), true);
-        });
-        binding.scbFollowSys.setOnCheckedChangeListener((checkBox, isChecked) -> {
-            readBookControl.setLightFollowSys(isChecked);
-            if (isChecked) {
-                //跟随系统
-                binding.hpbLight.setEnabled(false);
-                setScreenBrightness();
-            } else {
-                //不跟随系统
-                binding.hpbLight.setEnabled(true);
-                setScreenBrightness(readBookControl.getLight());
-            }
-        });
         binding.hpbLight.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
-                if (!readBookControl.getLightFollowSys()) {
-                    readBookControl.setLight(i);
-                    setScreenBrightness(i);
-                }
+                readBookControl.setLight(i);
+                //setScreenBrightness(i); //?
+                binding.tvBrightness.setText(Integer.toString(i)); //亮度改变后更新亮度显示
             }
 
             @Override
@@ -158,25 +143,9 @@ public class ReadAdjustPop extends FrameLayout {
         });
     }
 
-    public void setScreenBrightness() {
-        WindowManager.LayoutParams params = activity.getWindow().getAttributes();
-        params.screenBrightness = WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
-        activity.getWindow().setAttributes(params);
-    }
-
-    public void setScreenBrightness(int value) {
-        if (value < 1) value = 1;
-        WindowManager.LayoutParams params = activity.getWindow().getAttributes();
-        params.screenBrightness = value * 1.0f / 255f;
-        activity.getWindow().setAttributes(params);
-    }
-
     public void initLight() {
         binding.hpbLight.setProgress(readBookControl.getLight());
-        binding.scbFollowSys.setChecked(readBookControl.getLightFollowSys());
-        if (!readBookControl.getLightFollowSys()) {
-            setScreenBrightness(readBookControl.getLight());
-        }
+        binding.tvBrightness.setText(Integer.toString(readBookControl.getLight()));
     }
 
     public interface Callback {

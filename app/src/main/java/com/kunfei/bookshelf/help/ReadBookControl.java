@@ -1,7 +1,6 @@
 //Copyright (c) 2017. 章钦豪. All rights reserved.
 package com.kunfei.bookshelf.help;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
@@ -10,11 +9,11 @@ import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-import android.provider.Settings;
 import android.util.DisplayMetrics;
 
 import com.kunfei.bookshelf.MApplication;
 import com.kunfei.bookshelf.utils.BitmapUtil;
+import com.kunfei.bookshelf.utils.Jdread1;
 import com.kunfei.bookshelf.utils.MeUtils;
 
 import java.util.ArrayList;
@@ -185,7 +184,6 @@ public class ReadBookControl {
         setTextDrawable();
     }
 
-    @SuppressWarnings("ConstantConditions")
     private void initPageStyle() {
         int bgCustom = getBgCustom(textDrawableIndex);
         if ((bgCustom == 2 || bgCustom == 3) && getBgPath(textDrawableIndex) != null) {
@@ -231,11 +229,10 @@ public class ReadBookControl {
                 .apply();
     }
 
-    @SuppressWarnings("ConstantConditions")
     public Drawable getBgDrawable(int textDrawableIndex, Context context, int width, int height) {
         int color;
         try {
-            Bitmap bitmap = null;
+            Bitmap bitmap;
             switch (getBgCustom(textDrawableIndex)) {
                 case 3:
                     bitmap = MeUtils.getFitAssetsSampleBitmap(context.getAssets(), getBgPath(textDrawableIndex), width, height);
@@ -268,7 +265,6 @@ public class ReadBookControl {
         }
     }
 
-    @SuppressWarnings("ConstantConditions")
     public Drawable getDefaultBgDrawable(int textDrawableIndex, Context context) {
         if (textDrawable.get(textDrawableIndex).get("bgIsColor") != 0) {
             return new ColorDrawable(textDrawable.get(textDrawableIndex).get("textBackground"));
@@ -297,12 +293,10 @@ public class ReadBookControl {
                 .apply();
     }
 
-    @SuppressWarnings("ConstantConditions")
     public int getDefaultTextColor(int textDrawableIndex) {
         return textDrawable.get(textDrawableIndex).get("textColor");
     }
 
-    @SuppressWarnings("ConstantConditions")
     private int getDefaultBg(int textDrawableIndex) {
         return textDrawable.get(textDrawableIndex).get("textBackground");
     }
@@ -631,7 +625,6 @@ public class ReadBookControl {
         return darkStatusIcon;
     }
 
-    @SuppressWarnings("ConstantConditions")
     public boolean getDarkStatusIcon(int textDrawableIndex) {
         return preferences.getBoolean("darkStatusIcon" + textDrawableIndex, textDrawable.get(textDrawableIndex).get("darkStatusIcon") != 0);
     }
@@ -786,33 +779,16 @@ public class ReadBookControl {
     }
 
     public int getLight() {
-        return preferences.getInt("light", getScreenBrightness());
+        return getScreenBrightness();
+
     }
 
     public void setLight(int light) {
-        preferences.edit()
-                .putInt("light", light)
-                .apply();
-    }
-
-    public Boolean getLightFollowSys() {
-        return preferences.getBoolean("lightFollowSys", true);
-    }
-
-    public void setLightFollowSys(boolean isFollowSys) {
-        preferences.edit()
-                .putBoolean("lightFollowSys", isFollowSys)
-                .apply();
+        Jdread1.setBrightness(light);
     }
 
     private int getScreenBrightness() {
-        int value = 0;
-        ContentResolver cr = MApplication.getInstance().getContentResolver();
-        try {
-            value = Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS);
-        } catch (Settings.SettingNotFoundException ignored) {
-        }
-        return value;
+        return Jdread1.getBrightness();
     }
 
     public boolean disableScrollClickTurn() {

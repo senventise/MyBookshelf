@@ -54,18 +54,10 @@
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="7dp"
                         android:layout_marginRight="7dp"
-                        android:text="@string/flow_sys"
+                        android:id="@+id/tv_brightness"
+                        android:text="亮度"
                         android:textColor="@color/tv_text_default"
                         android:textSize="14sp" />
-
-                    <com.kunfei.bookshelf.widget.check_box.SmoothCheckBox
-                        android:id="@+id/scb_follow_sys"
-                        android:layout_width="16dp"
-                        android:layout_height="16dp"
-                        android:layout_gravity="center_vertical"
-                        android:clickable="false"
-                        android:contentDescription="@string/flow_sys"
-                        app:duration="150" />
                 </LinearLayout>
 
                 <com.kunfei.bookshelf.widget.views.ATESeekBar
@@ -74,7 +66,7 @@
                     android:layout_height="30dp"
                     android:layout_marginStart="15dp"
                     android:layout_marginEnd="15dp"
-                    android:max="255" />
+                    android:max="64" />
 
             </LinearLayout>
 
