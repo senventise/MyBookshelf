@@ -355,7 +355,7 @@ public class ReadBookActivity extends MBaseActivity<ReadBookContract.Presenter> 
     protected void initData() {
         mPresenter.saveProgress();
         //显示菜单
-        menuTopIn = AnimationUtils.loadAnimation(this, R.anim.anim_readbook_top_in);
+        menuTopIn = AnimationUtils.loadAnimation(this, R.anim.anim_none);
         menuTopIn.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -373,7 +373,7 @@ public class ReadBookActivity extends MBaseActivity<ReadBookContract.Presenter> 
 
             }
         });
-        menuBottomIn = AnimationUtils.loadAnimation(this, R.anim.anim_readbook_bottom_in);
+        menuBottomIn = AnimationUtils.loadAnimation(this, R.anim.anim_none);
         menuBottomIn.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -392,7 +392,7 @@ public class ReadBookActivity extends MBaseActivity<ReadBookContract.Presenter> 
         });
 
         //隐藏菜单
-        menuTopOut = AnimationUtils.loadAnimation(this, R.anim.anim_readbook_top_out);
+        menuTopOut = AnimationUtils.loadAnimation(this, R.anim.anim_none);
         menuTopOut.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -417,7 +417,7 @@ public class ReadBookActivity extends MBaseActivity<ReadBookContract.Presenter> 
 
             }
         });
-        menuBottomOut = AnimationUtils.loadAnimation(this, R.anim.anim_readbook_bottom_out);
+        menuBottomOut = AnimationUtils.loadAnimation(this, R.anim.anim_none);
         menuBottomOut.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
