@@ -335,6 +335,7 @@ public abstract class PageLoader {
      */
     public void setPageMode(PageAnimation.Mode pageMode) {
         mPageMode = pageMode;
+        mPageMode = PageAnimation.Mode.NONE;
         mPageView.setPageMode(mPageMode, mMarginTop, mMarginBottom);
         skipToChapter(mCurChapterPos, mCurPagePos);
     }
