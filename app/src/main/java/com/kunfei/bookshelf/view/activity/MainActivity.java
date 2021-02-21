@@ -582,14 +582,14 @@ public class MainActivity extends BaseTabActivity<MainContract.Presenter> implem
      * 新版本运行
      */
     private void versionUpRun() {
-        if (preferences.getInt("versionCode", 0) != MApplication.getVersionCode()) {
-            //保存版本号
-            preferences.edit()
-                    .putInt("versionCode", MApplication.getVersionCode())
-                    .apply();
-            //更新日志
-            moDialogHUD.showAssetMarkdown("updateLog.md");
-        }
+//        if (preferences.getInt("versionCode", 0) != MApplication.getVersionCode()) {
+//            //保存版本号
+//            preferences.edit()
+//                    .putInt("versionCode", MApplication.getVersionCode())
+//                    .apply();
+//            //更新日志
+//            moDialogHUD.showAssetMarkdown("updateLog.md");
+//        }
     }
 
     @Override
