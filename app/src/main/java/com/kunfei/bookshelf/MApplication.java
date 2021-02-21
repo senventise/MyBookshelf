@@ -96,6 +96,10 @@ public class MApplication extends Application {
             }
         });
         upEInkMode();
+        // 默认隐藏状态栏
+        configPreferences.edit()
+                .putBoolean("hide_status_bar", true)
+                .apply();
     }
 
     @Override
