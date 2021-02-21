@@ -590,6 +590,10 @@ public class MainActivity extends BaseTabActivity<MainContract.Presenter> implem
 //            //更新日志
 //            moDialogHUD.showAssetMarkdown("updateLog.md");
 //        }
+        if (!preferences.getBoolean("guide_showed", false)){
+            preferences.edit().putBoolean("guide_showed", true).apply();
+            moDialogHUD.showAssetMarkdown("guide.md");
+        }
     }
 
     @Override
