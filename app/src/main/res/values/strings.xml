@@ -15,7 +15,7 @@
     <string name="setting">设置</string>
     <string name="theme_setting">主题设置</string>
     <string name="about">关于</string>
-    <string name="donate">捐赠</string>
+    <string name="donate">捐赠给原作者</string>
     <string name="exit">退出</string>
     <string name="exit_no_save">还未保存,是否继续编辑</string>
     <string name="read_style">阅读样式设置</string>
@@ -51,7 +51,7 @@
     <string name="download_offline_t">离线下载</string>
     <string name="download_offline_s">下载选择的章节到本地</string>
     <string name="change_origin">换源</string>
-    <string name="about_description">\u3000\u3000这是一款开源的阅读软件，你可以fork我们的代码自己编译APK。欢迎提交代码帮助改善应用。\n\u3000\u3000公众号[开源阅读]！</string>
+    <string name="about_description">阅读2.0 JDRead1优化版</string>
     <string name="version_name">Version %s</string>
     <string name="pt_auto_refresh">自动刷新</string>
     <string name="ps_auto_refresh">打开软件时自动更新书籍</string>
@@ -107,7 +107,7 @@
     <string name="ps_hide_navigation_bar">阅读界面隐藏虚拟按键</string>
     <string name="pt_hide_navigation_bar">隐藏导航栏</string>
     <string name="re_navigation_bar_color">导航栏颜色</string>
-    <string name="git_hub">GitHub</string>
+    <string name="git_hub">GitHub: https://github.com/senventise/MyBookshelf</string>
     <string name="scoring">评分</string>
     <string name="send_mail">发送邮件</string>
     <string name="can_not_open">无法打开</string>
@@ -370,7 +370,7 @@
     <string name="theme">主题</string>
     <string name="default_theme">默认主题</string>
     <string name="restore_default_theme">恢复主题为默认配色</string>
-    <string name="join_qq_group">加入QQ群</string>
+    <string name="join_qq_group">Jdread1交流群: 710282452</string>
     <string name="read_file_error">文件读取失败</string>
     <string name="bg_image_per">获取背景图片需存储权限</string>
     <string name="input_book_source_url">输入书源网址</string>

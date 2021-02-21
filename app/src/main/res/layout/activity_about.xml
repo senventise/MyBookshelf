@@ -107,6 +107,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/background_card">
 
                 <LinearLayout
@@ -142,6 +143,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/background_card">
 
                 <LinearLayout
@@ -177,6 +179,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/background_card">
 
                 <LinearLayout
@@ -212,6 +215,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/background_card">
 
                 <LinearLayout
@@ -317,6 +321,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/background_card">
 
                 <LinearLayout
@@ -352,6 +357,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/background_card">
 
                 <LinearLayout
@@ -422,6 +428,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/background_card">
 
                 <LinearLayout
