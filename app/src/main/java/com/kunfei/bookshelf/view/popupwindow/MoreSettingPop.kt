@@ -14,6 +14,7 @@ import com.kunfei.bookshelf.R
 import com.kunfei.bookshelf.constant.RxBusTag
 import com.kunfei.bookshelf.databinding.PopMoreSettingBinding
 import com.kunfei.bookshelf.help.ReadBookControl
+import com.kunfei.bookshelf.utils.Jdread1
 import com.kunfei.bookshelf.utils.theme.ATH
 import com.kunfei.bookshelf.widget.modialog.PageKeyDialog
 import org.jetbrains.anko.sdk27.listeners.onClick
@@ -48,6 +49,15 @@ class MoreSettingPop : FrameLayout {
 
     private fun bindEvent() {
         setOnClickListener { this.visibility = View.GONE }
+        binding.a2ModeSwitch.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
+            if (compoundButton.isPressed) {
+                if (b) {
+                    Jdread1.applyApplicationFastMode(true)
+                }else {
+                    Jdread1.enterNormalMode()
+                }
+            }
+        }
         binding.sbImmersionStatusBar.setOnCheckedChangeListener { compoundButton: CompoundButton, b: Boolean ->
             if (compoundButton.isPressed) {
                 readBookControl.immersionStatusBar = b
@@ -203,6 +213,7 @@ class MoreSettingPop : FrameLayout {
         binding.sbShowTimeBattery.isChecked = readBookControl.showTimeBattery
         binding.sbShowLine.isChecked = readBookControl.showLine
         binding.sbSelectText.isChecked = readBookControl.isCanSelectText
+        binding.a2ModeSwitch.isChecked = Jdread1.isInAppA2Mode()
         upView()
     }
 
