@@ -43,21 +43,21 @@
     <com.kunfei.bookshelf.widget.prefs.ATEPreferenceCategory android:title="白天">
 
         <com.jaredrummler.android.colorpicker.ColorPreference
-            android:defaultValue="@color/md_grey_100"
+            android:defaultValue="@color/white"
             android:key="colorPrimary"
             android:summary="白天，主色调"
             android:title="主色调"
             app:cpv_dialogType="preset" />
 
         <com.jaredrummler.android.colorpicker.ColorPreference
-            android:defaultValue="@color/md_pink_600"
+            android:defaultValue="@color/black"
             android:key="colorAccent"
             android:summary="白天，强调色"
             android:title="强调色"
             app:cpv_dialogType="preset" />
 
         <com.jaredrummler.android.colorpicker.ColorPreference
-            android:defaultValue="@color/md_grey_100"
+            android:defaultValue="@color/white"
             android:key="colorBackground"
             android:summary="白天，背景色"
             android:title="背景色"
